@@ -131,47 +131,39 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
       gliss_toggle_button (0),
       optionsButton (0)
 {
-    addAndMakeVisible (groupComponent3 = new GroupComponent (String::empty,
-                                                             String::empty));
+    addAndMakeVisible (groupComponent3 = new juce::GroupComponent({}, {}));
     groupComponent3->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent3->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent2 = new GroupComponent (String::empty,
-                                                             String::empty));
+    addAndMakeVisible (groupComponent2 = new juce::GroupComponent({}, {}));
     groupComponent2->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent2->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent20 = new GroupComponent (String::empty,
-                                                              String::empty));
+    addAndMakeVisible (groupComponent20 = new juce::GroupComponent({}, {}));
     groupComponent20->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent20->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent18 = new GroupComponent (String::empty,
-                                                              String::empty));
+    addAndMakeVisible (groupComponent18 = new juce::GroupComponent({}, {}));
     groupComponent18->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent18->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent5 = new GroupComponent (String::empty,
-                                                             String::empty));
+    addAndMakeVisible (groupComponent5 = new juce::GroupComponent({}, {}));
     groupComponent5->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent5->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent15 = new GroupComponent (String::empty,
-                                                              String::empty));
+    addAndMakeVisible (groupComponent15 = new juce::GroupComponent({}, {}));
     groupComponent15->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent15->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent9 = new GroupComponent (String::empty,
-                                                             String::empty));
+    addAndMakeVisible (groupComponent9 = new juce::GroupComponent({}, {}));
     groupComponent9->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent9->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (groupComponent = new GroupComponent (String::empty,
-                                                            String::empty));
+    addAndMakeVisible (groupComponent = new juce::GroupComponent({}, {}));
     groupComponent->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (mix_slider = new Slider (String::empty));
+    addAndMakeVisible (mix_slider = new juce::Slider());
     mix_slider->setRange (0, 1, 0.001);
     mix_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     mix_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -180,8 +172,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     mix_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     mix_slider->addListener (this);
 
-    addAndMakeVisible (label = new Label (String::empty,
-                                          L"Mix"));
+    addAndMakeVisible (label = new juce::Label({}, "Mix"));
     label->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label->setJustificationType (Justification::centred);
     label->setEditable (false, false, false);
@@ -189,7 +180,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label->setColour (TextEditor::textColourId, Colours::black);
     label->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (ingain_slider = new Slider (String::empty));
+    addAndMakeVisible (ingain_slider = new juce::Slider());
     ingain_slider->setRange (0, 1, 0.001);
     ingain_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     ingain_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -198,8 +189,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     ingain_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     ingain_slider->addListener (this);
 
-    addAndMakeVisible (label2 = new Label (String::empty,
-                                           L"InGain"));
+    addAndMakeVisible (label2 = new juce::Label({}, "InGain"));
     label2->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label2->setJustificationType (Justification::centred);
     label2->setEditable (false, false, false);
@@ -207,7 +197,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label2->setColour (TextEditor::textColourId, Colours::black);
     label2->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (amp_slider = new Slider (String::empty));
+    addAndMakeVisible (amp_slider = new juce::Slider());
     amp_slider->setRange (0, 1, 0.001);
     amp_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     amp_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -216,8 +206,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     amp_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     amp_slider->addListener (this);
 
-    addAndMakeVisible (label3 = new Label (String::empty,
-                                           L"Amp"));
+    addAndMakeVisible (label3 = new juce::Label({}, "Amp"));
     label3->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label3->setJustificationType (Justification::centred);
     label3->setEditable (false, false, false);
@@ -225,7 +214,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label3->setColour (TextEditor::textColourId, Colours::black);
     label3->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (ampv_slider = new Slider (String::empty));
+    addAndMakeVisible (ampv_slider = new juce::Slider());
     ampv_slider->setRange (0, 1, 0.001);
     ampv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     ampv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -234,8 +223,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     ampv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     ampv_slider->addListener (this);
 
-    addAndMakeVisible (label4 = new Label (String::empty,
-                                           L"+"));
+    addAndMakeVisible (label4 = new juce::Label({}, "+"));
     label4->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label4->setJustificationType (Justification::centred);
     label4->setEditable (false, false, false);
@@ -243,7 +231,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label4->setColour (TextEditor::textColourId, Colours::black);
     label4->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (pan_slider = new Slider (String::empty));
+    addAndMakeVisible (pan_slider = new juce::Slider());
     pan_slider->setRange (0, 1, 0.001);
     pan_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     pan_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -252,8 +240,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     pan_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     pan_slider->addListener (this);
 
-    addAndMakeVisible (label5 = new Label (String::empty,
-                                           L"Pan"));
+    addAndMakeVisible (label5 = new juce::Label({}, "Pan"));
     label5->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label5->setJustificationType (Justification::centred);
     label5->setEditable (false, false, false);
@@ -261,7 +248,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label5->setColour (TextEditor::textColourId, Colours::black);
     label5->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (panv_slider = new Slider (String::empty));
+    addAndMakeVisible (panv_slider = new juce::Slider());
     panv_slider->setRange (0, 1, 0.001);
     panv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     panv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -270,8 +257,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     panv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     panv_slider->addListener (this);
 
-    addAndMakeVisible (label6 = new Label (String::empty,
-                                           L"+-"));
+    addAndMakeVisible (label6 = new juce::Label({}, "+-"));
     label6->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label6->setJustificationType (Justification::centred);
     label6->setEditable (false, false, false);
@@ -279,7 +265,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label6->setColour (TextEditor::textColourId, Colours::black);
     label6->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (delay_slider = new Slider (String::empty));
+    addAndMakeVisible (delay_slider = new juce::Slider());
     delay_slider->setRange (0, 1, 0.0005);
     delay_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     delay_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -288,8 +274,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     delay_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     delay_slider->addListener (this);
 
-    addAndMakeVisible (label7 = new Label (String::empty,
-                                           L"Delay"));
+    addAndMakeVisible (label7 = new juce::Label({}, "Delay"));
     label7->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label7->setJustificationType (Justification::centred);
     label7->setEditable (false, false, false);
@@ -297,7 +282,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label7->setColour (TextEditor::textColourId, Colours::black);
     label7->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (delayv_slider = new Slider (String::empty));
+    addAndMakeVisible (delayv_slider = new juce::Slider());
     delayv_slider->setRange (0, 1, 0.0005);
     delayv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     delayv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -306,7 +291,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     delayv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     delayv_slider->addListener (this);
 
-    addAndMakeVisible (feedback_slider = new Slider (String::empty));
+    addAndMakeVisible (feedback_slider = new juce::Slider());
     feedback_slider->setRange (0, 1, 0.001);
     feedback_slider->setSliderStyle (Slider::LinearHorizontal);
     feedback_slider->setTextBoxStyle (Slider::NoTextBox, true, 80, 20);
@@ -315,8 +300,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     feedback_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     feedback_slider->addListener (this);
 
-    addAndMakeVisible (label9 = new Label (String::empty,
-                                           L"Feedback"));
+    addAndMakeVisible (label9 = new juce::Label({}, "Feedback"));
     label9->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label9->setJustificationType (Justification::centred);
     label9->setEditable (false, false, false);
@@ -324,7 +308,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label9->setColour (TextEditor::textColourId, Colours::black);
     label9->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (gliss_slider = new Slider (String::empty));
+    addAndMakeVisible (gliss_slider = new juce::Slider());
     gliss_slider->setRange (0, 1, 0.001);
     gliss_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     gliss_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -333,8 +317,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     gliss_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     gliss_slider->addListener (this);
 
-    addAndMakeVisible (label11 = new Label (String::empty,
-                                            L"Gliss"));
+    addAndMakeVisible (label11 = new juce::Label({}, "Gliss"));
     label11->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label11->setJustificationType (Justification::centred);
     label11->setEditable (false, false, false);
@@ -342,7 +325,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label11->setColour (TextEditor::textColourId, Colours::black);
     label11->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (glissv_slider = new Slider (String::empty));
+    addAndMakeVisible (glissv_slider = new juce::Slider());
     glissv_slider->setRange (0, 1, 0.001);
     glissv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     glissv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -351,7 +334,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     glissv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     glissv_slider->addListener (this);
 
-    addAndMakeVisible (trans_slider = new Slider (String::empty));
+    addAndMakeVisible (trans_slider = new juce::Slider());
     trans_slider->setRange (0, 1, 0.001);
     trans_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     trans_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -360,8 +343,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     trans_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     trans_slider->addListener (this);
 
-    addAndMakeVisible (label13 = new Label (String::empty,
-                                            L"Trans"));
+    addAndMakeVisible (label13 = new juce::Label({}, "Trans"));
     label13->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label13->setJustificationType (Justification::centred);
     label13->setEditable (false, false, false);
@@ -369,7 +351,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label13->setColour (TextEditor::textColourId, Colours::black);
     label13->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (transv_slider = new Slider (String::empty));
+    addAndMakeVisible (transv_slider = new juce::Slider());
     transv_slider->setRange (0, 1, 0.001);
     transv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     transv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -378,7 +360,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     transv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     transv_slider->addListener (this);
 
-    addAndMakeVisible (iot_slider = new Slider (String::empty));
+    addAndMakeVisible (iot_slider = new juce::Slider());
     iot_slider->setRange (0, 1, 0.001);
     iot_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     iot_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -387,8 +369,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     iot_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     iot_slider->addListener (this);
 
-    addAndMakeVisible (label15 = new Label (String::empty,
-                                            L"IOT"));
+    addAndMakeVisible (label15 = new juce::Label({}, "IOT"));
     label15->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label15->setJustificationType (Justification::centred);
     label15->setEditable (false, false, false);
@@ -396,7 +377,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label15->setColour (TextEditor::textColourId, Colours::black);
     label15->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (iotv_slider = new Slider (String::empty));
+    addAndMakeVisible (iotv_slider = new juce::Slider());
     iotv_slider->setRange (0, 1, 0.001);
     iotv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     iotv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -405,7 +386,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     iotv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     iotv_slider->addListener (this);
 
-    addAndMakeVisible (dur_slider = new Slider (String::empty));
+    addAndMakeVisible (dur_slider = new juce::Slider());
     dur_slider->setRange (0, 1, 0.001);
     dur_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     dur_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -414,8 +395,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     dur_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     dur_slider->addListener (this);
 
-    addAndMakeVisible (label17 = new Label (String::empty,
-                                            L"Dur"));
+    addAndMakeVisible (label17 = new juce::Label({}, "Dur"));
     label17->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label17->setJustificationType (Justification::centred);
     label17->setEditable (false, false, false);
@@ -423,7 +403,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label17->setColour (TextEditor::textColourId, Colours::black);
     label17->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (durv_slider = new Slider (String::empty));
+    addAndMakeVisible (durv_slider = new juce::Slider());
     durv_slider->setRange (0, 1, 0.001);
     durv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     durv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -432,7 +412,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     durv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     durv_slider->addListener (this);
 
-    addAndMakeVisible (ffreq_slider = new Slider (String::empty));
+    addAndMakeVisible (ffreq_slider = new juce::Slider());
     ffreq_slider->setRange (0, 1, 0.001);
     ffreq_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     ffreq_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -441,8 +421,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     ffreq_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     ffreq_slider->addListener (this);
 
-    addAndMakeVisible (label19 = new Label (String::empty,
-                                            L"FFreq"));
+    addAndMakeVisible (label19 = new juce::Label({}, "FFreq"));
     label19->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label19->setJustificationType (Justification::centred);
     label19->setEditable (false, false, false);
@@ -450,7 +429,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label19->setColour (TextEditor::textColourId, Colours::black);
     label19->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (ffreqv_slider = new Slider (String::empty));
+    addAndMakeVisible (ffreqv_slider = new juce::Slider());
     ffreqv_slider->setRange (0, 1, 0.001);
     ffreqv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     ffreqv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -459,7 +438,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     ffreqv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     ffreqv_slider->addListener (this);
 
-    addAndMakeVisible (fq_slider = new Slider (String::empty));
+    addAndMakeVisible (fq_slider = new juce::Slider());
     fq_slider->setRange (0, 1, 0.001);
     fq_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     fq_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -469,8 +448,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     fq_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     fq_slider->addListener (this);
 
-    addAndMakeVisible (label21 = new Label (String::empty,
-                                            L"FQ"));
+    addAndMakeVisible (label21 = new juce::Label({}, "FQ"));
     label21->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label21->setJustificationType (Justification::centred);
     label21->setEditable (false, false, false);
@@ -478,7 +456,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label21->setColour (TextEditor::textColourId, Colours::black);
     label21->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (fqv_slider = new Slider (String::empty));
+    addAndMakeVisible (fqv_slider = new juce::Slider());
     fqv_slider->setRange (0, 1, 0.001);
     fqv_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     fqv_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -487,7 +465,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     fqv_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     fqv_slider->addListener (this);
 
-    addAndMakeVisible (grains_slider = new Slider (String::empty));
+    addAndMakeVisible (grains_slider = new juce::Slider());
     grains_slider->setRange (0, 20, 1);
     grains_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     grains_slider->setTextBoxStyle (Slider::TextBoxRight, true, 32, 20);
@@ -498,8 +476,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     grains_slider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff060827));
     grains_slider->addListener (this);
 
-    addAndMakeVisible (label23 = new Label (String::empty,
-                                            L"Grains"));
+    addAndMakeVisible (label23 = new juce::Label({}, "Grains"));
     label23->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label23->setJustificationType (Justification::centred);
     label23->setEditable (false, false, false);
@@ -507,7 +484,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label23->setColour (TextEditor::textColourId, Colours::black);
     label23->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (param_display = new TextEditor (String::empty));
+    addAndMakeVisible (param_display = new juce::TextEditor({}));
     param_display->setMultiLine (false);
     param_display->setReturnKeyStartsNewLine (false);
     param_display->setReadOnly (true);
@@ -515,12 +492,12 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     param_display->setCaretVisible (false);
     param_display->setPopupMenuEnabled (false);
     param_display->setColour (TextEditor::textColourId, Colours::black);
-    param_display->setText (String::empty);
+    param_display->setText({});
 
-    addAndMakeVisible (filtertype_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (filtertype_combobox = new juce::ComboBox({}));
     filtertype_combobox->setEditableText (false);
     filtertype_combobox->setJustificationType (Justification::centred);
-    filtertype_combobox->setTextWhenNothingSelected (String::empty);
+    filtertype_combobox->setTextWhenNothingSelected({});
     filtertype_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     filtertype_combobox->addItem (L"off", 1);
     filtertype_combobox->addItem (L"band", 2);
@@ -532,45 +509,44 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     filtertype_combobox->addSeparator();
     filtertype_combobox->addListener (this);
 
-    addAndMakeVisible (initButton = new TextButton (String::empty));
+    addAndMakeVisible (initButton = new juce::TextButton());
     initButton->setButtonText (L"Init");
     initButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     initButton->addListener (this);
     initButton->setColour (TextButton::buttonColourId, Colour (0xffdddddd));
 
-    addAndMakeVisible (saveButton = new TextButton (String::empty));
+    addAndMakeVisible (saveButton = new juce::TextButton());
     saveButton->setButtonText (L"Save");
     saveButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight | Button::ConnectedOnTop | Button::ConnectedOnBottom);
     saveButton->addListener (this);
     saveButton->setColour (TextButton::buttonColourId, Colour (0xffdddddd));
 
-    addAndMakeVisible (savetoButton = new TextButton (String::empty));
+    addAndMakeVisible (savetoButton = new  juce::TextButton());
     savetoButton->setButtonText (L"Save To");
     savetoButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     savetoButton->addListener (this);
     savetoButton->setColour (TextButton::buttonColourId, Colour (0xffdddddd));
 
-    addAndMakeVisible (decPresetButton = new TextButton (String::empty));
+    addAndMakeVisible (decPresetButton = new juce::TextButton());
     decPresetButton->setButtonText (L"-");
     decPresetButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     decPresetButton->addListener (this);
     decPresetButton->setColour (TextButton::buttonColourId, Colour (0xffdddddd));
 
-    addAndMakeVisible (incPresetButton = new TextButton (String::empty));
+    addAndMakeVisible (incPresetButton = new juce::TextButton());
     incPresetButton->setButtonText (L"+");
     incPresetButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     incPresetButton->addListener (this);
     incPresetButton->setColour (TextButton::buttonColourId, Colour (0xffdddddd));
 
-    addAndMakeVisible (program_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (program_combobox = new juce::ComboBox ({}));
     program_combobox->setEditableText (true);
     program_combobox->setJustificationType (Justification::centredLeft);
-    program_combobox->setTextWhenNothingSelected (String::empty);
+    program_combobox->setTextWhenNothingSelected ({});
     program_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     program_combobox->addListener (this);
 
-    addAndMakeVisible (label25 = new Label (String::empty,
-                                            L"Argotlunar v2.0.6"));
+    addAndMakeVisible (label25 = new juce::Label({}, "Argotlunar v2.0.6"));
     label25->setFont (Font (16.0000f, Font::plain));
     label25->setJustificationType (Justification::centredLeft);
     label25->setEditable (false, false, false);
@@ -578,7 +554,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label25->setColour (TextEditor::textColourId, Colours::black);
     label25->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (envshape_slider = new Slider (String::empty));
+    addAndMakeVisible (envshape_slider = new juce::Slider());
     envshape_slider->setRange (0, 1, 0.001);
     envshape_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     envshape_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -588,7 +564,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     envshape_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     envshape_slider->addListener (this);
 
-    addAndMakeVisible (envskew_slider = new Slider (String::empty));
+    addAndMakeVisible (envskew_slider = new juce::Slider());
     envskew_slider->setRange (0, 1, 0.001);
     envskew_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     envskew_slider->setTextBoxStyle (Slider::NoTextBox, false, 80, 20);
@@ -597,8 +573,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     envskew_slider->setColour (Slider::rotarySliderOutlineColourId, Colour (0xff3c3c54));
     envskew_slider->addListener (this);
 
-    addAndMakeVisible (label26 = new Label (String::empty,
-                                            L"Sustain"));
+    addAndMakeVisible (label26 = new juce::Label({}, "Sustain"));
     label26->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label26->setJustificationType (Justification::centred);
     label26->setEditable (false, false, false);
@@ -606,8 +581,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label26->setColour (TextEditor::textColourId, Colours::black);
     label26->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label27 = new Label (String::empty,
-                                            L"Skew"));
+    addAndMakeVisible (label27 = new juce::Label({}, "Skew"));
     label27->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label27->setJustificationType (Justification::centred);
     label27->setEditable (false, false, false);
@@ -615,8 +589,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label27->setColour (TextEditor::textColourId, Colours::black);
     label27->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label28 = new Label (String::empty,
-                                            L"Freeze"));
+    addAndMakeVisible (label28 = new juce::Label({}, "Freeze"));
     label28->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label28->setJustificationType (Justification::centred);
     label28->setEditable (false, false, false);
@@ -624,18 +597,18 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label28->setColour (TextEditor::textColourId, Colours::black);
     label28->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (freeze_toggle_button = new ToggleButton (String::empty));
+    addAndMakeVisible (freeze_toggle_button = new juce::ToggleButton ());
     freeze_toggle_button->addListener (this);
     freeze_toggle_button->setColour (ToggleButton::textColourId, Colours::white);
 
-    addAndMakeVisible (scale_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (scale_combobox = new juce::ComboBox ({}));
     scale_combobox->setEditableText (false);
     scale_combobox->setJustificationType (Justification::centredLeft);
-    scale_combobox->setTextWhenNothingSelected (String::empty);
+    scale_combobox->setTextWhenNothingSelected ({});
     scale_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     scale_combobox->addListener (this);
 
-    addAndMakeVisible (scalekey_slider = new Slider (String::empty));
+    addAndMakeVisible (scalekey_slider = new juce::Slider ());
     scalekey_slider->setRange (0, 11, 1);
     scalekey_slider->setSliderStyle (Slider::RotaryVerticalDrag);
     scalekey_slider->setTextBoxStyle (Slider::NoTextBox, true, 40, 15);
@@ -646,8 +619,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     scalekey_slider->setColour (Slider::textBoxBackgroundColourId, Colour (0xff060827));
     scalekey_slider->addListener (this);
 
-    addAndMakeVisible (label24 = new Label (String::empty,
-                                            L"Key"));
+    addAndMakeVisible (label24 = new juce::Label({}, "Key"));
     label24->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label24->setJustificationType (Justification::centred);
     label24->setEditable (false, false, false);
@@ -655,13 +627,11 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label24->setColour (TextEditor::textColourId, Colours::black);
     label24->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (groupComponent17 = new GroupComponent (String::empty,
-                                                              String::empty));
+    addAndMakeVisible (groupComponent17 = new GroupComponent ({}, {}));
     groupComponent17->setColour (GroupComponent::outlineColourId, Colour (0x66c1c1c1));
     groupComponent17->setColour (GroupComponent::textColourId, Colours::white);
 
-    addAndMakeVisible (label29 = new Label (String::empty,
-                                            L"Correlation Matrix"));
+    addAndMakeVisible (label29 = new juce::Label({}, "Correlation Matrix"));
     label29->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label29->setJustificationType (Justification::centred);
     label29->setEditable (false, false, false);
@@ -669,10 +639,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label29->setColour (TextEditor::textColourId, Colours::black);
     label29->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (matrix_src_combobox_1 = new ComboBox (String::empty));
+    addAndMakeVisible (matrix_src_combobox_1 = new juce::ComboBox ({}));
     matrix_src_combobox_1->setEditableText (false);
     matrix_src_combobox_1->setJustificationType (Justification::centredLeft);
-    matrix_src_combobox_1->setTextWhenNothingSelected (String::empty);
+    matrix_src_combobox_1->setTextWhenNothingSelected ({});
     matrix_src_combobox_1->setTextWhenNoChoicesAvailable (L"(no choices)");
     matrix_src_combobox_1->addItem (L"Off", 1);
     matrix_src_combobox_1->addItem (L"Amp", 2);
@@ -687,10 +657,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_src_combobox_1->addItem (L"FQ", 11);
     matrix_src_combobox_1->addListener (this);
 
-    addAndMakeVisible (matrix_dest_combobox_1 = new ComboBox (String::empty));
+    addAndMakeVisible (matrix_dest_combobox_1 = new juce::ComboBox ({}));
     matrix_dest_combobox_1->setEditableText (false);
     matrix_dest_combobox_1->setJustificationType (Justification::centredLeft);
-    matrix_dest_combobox_1->setTextWhenNothingSelected (String::empty);
+    matrix_dest_combobox_1->setTextWhenNothingSelected ({});
     matrix_dest_combobox_1->setTextWhenNoChoicesAvailable (L"(no choices)");
     matrix_dest_combobox_1->addItem (L"Off", 1);
     matrix_dest_combobox_1->addItem (L"Amp", 2);
@@ -707,7 +677,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_dest_combobox_1->addSeparator();
     matrix_dest_combobox_1->addListener (this);
 
-    addAndMakeVisible (matrix_mod_slider_1 = new Slider (String::empty));
+    addAndMakeVisible (matrix_mod_slider_1 = new juce::Slider());
     matrix_mod_slider_1->setRange (-100, 100, 1);
     matrix_mod_slider_1->setSliderStyle (Slider::LinearHorizontal);
     matrix_mod_slider_1->setTextBoxStyle (Slider::NoTextBox, true, 40, 15);
@@ -718,8 +688,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_mod_slider_1->setColour (Slider::textBoxBackgroundColourId, Colour (0xff060827));
     matrix_mod_slider_1->addListener (this);
 
-    addAndMakeVisible (label30 = new Label (String::empty,
-                                            L"Src"));
+    addAndMakeVisible (label30 = new juce::Label({}, "Src"));
     label30->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label30->setJustificationType (Justification::centred);
     label30->setEditable (false, false, false);
@@ -727,8 +696,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label30->setColour (TextEditor::textColourId, Colours::black);
     label30->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label31 = new Label (String::empty,
-                                            L"Dest"));
+    addAndMakeVisible (label31 = new juce::Label({}, "Dest"));
     label31->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label31->setJustificationType (Justification::centred);
     label31->setEditable (false, false, false);
@@ -736,10 +704,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label31->setColour (TextEditor::textColourId, Colours::black);
     label31->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (matrix_src_combobox_2 = new ComboBox (String::empty));
+    addAndMakeVisible (matrix_src_combobox_2 = new juce::ComboBox ({}));
     matrix_src_combobox_2->setEditableText (false);
     matrix_src_combobox_2->setJustificationType (Justification::centredLeft);
-    matrix_src_combobox_2->setTextWhenNothingSelected (String::empty);
+    matrix_src_combobox_2->setTextWhenNothingSelected({});
     matrix_src_combobox_2->setTextWhenNoChoicesAvailable (L"(no choices)");
     matrix_src_combobox_2->addItem (L"Off", 1);
     matrix_src_combobox_2->addItem (L"Amp", 2);
@@ -754,10 +722,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_src_combobox_2->addItem (L"FQ", 11);
     matrix_src_combobox_2->addListener (this);
 
-    addAndMakeVisible (matrix_dest_combobox_2 = new ComboBox (String::empty));
+    addAndMakeVisible (matrix_dest_combobox_2 = new juce::ComboBox({}));
     matrix_dest_combobox_2->setEditableText (false);
     matrix_dest_combobox_2->setJustificationType (Justification::centredLeft);
-    matrix_dest_combobox_2->setTextWhenNothingSelected (String::empty);
+    matrix_dest_combobox_2->setTextWhenNothingSelected({});
     matrix_dest_combobox_2->setTextWhenNoChoicesAvailable (L"(no choices)");
     matrix_dest_combobox_2->addItem (L"Off", 1);
     matrix_dest_combobox_2->addItem (L"Amp", 2);
@@ -774,7 +742,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_dest_combobox_2->addSeparator();
     matrix_dest_combobox_2->addListener (this);
 
-    addAndMakeVisible (matrix_mod_slider_2 = new Slider (String::empty));
+    addAndMakeVisible (matrix_mod_slider_2 = new juce::Slider());
     matrix_mod_slider_2->setRange (-100, 100, 1);
     matrix_mod_slider_2->setSliderStyle (Slider::LinearHorizontal);
     matrix_mod_slider_2->setTextBoxStyle (Slider::NoTextBox, true, 40, 15);
@@ -785,8 +753,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_mod_slider_2->setColour (Slider::textBoxBackgroundColourId, Colour (0xff060827));
     matrix_mod_slider_2->addListener (this);
 
-    addAndMakeVisible (label34 = new Label (String::empty,
-                                            L"Src"));
+    addAndMakeVisible (label34 = new juce::Label({}, "Src"));
     label34->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label34->setJustificationType (Justification::centred);
     label34->setEditable (false, false, false);
@@ -794,8 +761,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label34->setColour (TextEditor::textColourId, Colours::black);
     label34->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label35 = new Label (String::empty,
-                                            L"Dest"));
+    addAndMakeVisible (label35 = new juce::Label({}, "Dest"));
     label35->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label35->setJustificationType (Justification::centred);
     label35->setEditable (false, false, false);
@@ -803,10 +769,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label35->setColour (TextEditor::textColourId, Colours::black);
     label35->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (matrix_src_combobox_3 = new ComboBox (String::empty));
+    addAndMakeVisible (matrix_src_combobox_3 = new juce::ComboBox({}));
     matrix_src_combobox_3->setEditableText (false);
     matrix_src_combobox_3->setJustificationType (Justification::centredLeft);
-    matrix_src_combobox_3->setTextWhenNothingSelected (String::empty);
+    matrix_src_combobox_3->setTextWhenNothingSelected({});
     matrix_src_combobox_3->setTextWhenNoChoicesAvailable (L"(no choices)");
     matrix_src_combobox_3->addItem (L"Off", 1);
     matrix_src_combobox_3->addItem (L"Amp", 2);
@@ -821,10 +787,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_src_combobox_3->addItem (L"FQ", 11);
     matrix_src_combobox_3->addListener (this);
 
-    addAndMakeVisible (matrix_dest_combobox_3 = new ComboBox (String::empty));
+    addAndMakeVisible (matrix_dest_combobox_3 = new juce::ComboBox({}));
     matrix_dest_combobox_3->setEditableText (false);
     matrix_dest_combobox_3->setJustificationType (Justification::centredLeft);
-    matrix_dest_combobox_3->setTextWhenNothingSelected (String::empty);
+    matrix_dest_combobox_3->setTextWhenNothingSelected({});
     matrix_dest_combobox_3->setTextWhenNoChoicesAvailable (L"(no choices)");
     matrix_dest_combobox_3->addItem (L"Off", 1);
     matrix_dest_combobox_3->addItem (L"Amp", 2);
@@ -841,7 +807,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_dest_combobox_3->addSeparator();
     matrix_dest_combobox_3->addListener (this);
 
-    addAndMakeVisible (matrix_mod_slider_3 = new Slider (String::empty));
+    addAndMakeVisible (matrix_mod_slider_3 = new juce::Slider());
     matrix_mod_slider_3->setRange (-100, 100, 1);
     matrix_mod_slider_3->setSliderStyle (Slider::LinearHorizontal);
     matrix_mod_slider_3->setTextBoxStyle (Slider::NoTextBox, true, 40, 15);
@@ -852,8 +818,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     matrix_mod_slider_3->setColour (Slider::textBoxBackgroundColourId, Colour (0xff060827));
     matrix_mod_slider_3->addListener (this);
 
-    addAndMakeVisible (label36 = new Label (String::empty,
-                                            L"Src"));
+    addAndMakeVisible (label36 = new juce::Label({}, "Src"));
     label36->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label36->setJustificationType (Justification::centred);
     label36->setEditable (false, false, false);
@@ -861,8 +826,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label36->setColour (TextEditor::textColourId, Colours::black);
     label36->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label37 = new Label (String::empty,
-                                            L"Dest"));
+    addAndMakeVisible (label37 = new juce::Label({}, "Dest"));
     label37->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label37->setJustificationType (Justification::centred);
     label37->setEditable (false, false, false);
@@ -870,22 +834,22 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label37->setColour (TextEditor::textColourId, Colours::black);
     label37->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (matrix_mode_1_button = new ToggleButton (String::empty));
+    addAndMakeVisible (matrix_mode_1_button = new juce::ToggleButton());
     matrix_mode_1_button->addListener (this);
     matrix_mode_1_button->setToggleState (true, false);
     matrix_mode_1_button->setColour (ToggleButton::textColourId, Colours::white);
 
-    addAndMakeVisible (matrix_mode_2_button = new ToggleButton (String::empty));
+    addAndMakeVisible (matrix_mode_2_button = new juce::ToggleButton());
     matrix_mode_2_button->addListener (this);
     matrix_mode_2_button->setToggleState (true, false);
     matrix_mode_2_button->setColour (ToggleButton::textColourId, Colours::white);
 
-    addAndMakeVisible (matrix_mode_3_button = new ToggleButton (String::empty));
+    addAndMakeVisible (matrix_mode_3_button = new juce::ToggleButton());
     matrix_mode_3_button->addListener (this);
     matrix_mode_3_button->setToggleState (true, false);
     matrix_mode_3_button->setColour (ToggleButton::textColourId, Colours::white);
 
-    addAndMakeVisible (scalekey_display = new TextEditor (String::empty));
+    addAndMakeVisible (scalekey_display = new juce::TextEditor({}));
     scalekey_display->setMultiLine (false);
     scalekey_display->setReturnKeyStartsNewLine (false);
     scalekey_display->setReadOnly (true);
@@ -895,27 +859,27 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     scalekey_display->setColour (TextEditor::textColourId, Colours::white);
     scalekey_display->setColour (TextEditor::backgroundColourId, Colour (0xff060827));
     scalekey_display->setColour (TextEditor::outlineColourId, Colour (0xff3c3c54));
-    scalekey_display->setText (String::empty);
+    scalekey_display->setText ({});
 
-    addAndMakeVisible (trans_toggle_button = new ToggleButton (String::empty));
+    addAndMakeVisible (trans_toggle_button = new juce::ToggleButton());
     trans_toggle_button->addListener (this);
     trans_toggle_button->setToggleState (true, false);
     trans_toggle_button->setColour (ToggleButton::textColourId, Colours::white);
 
-    addAndMakeVisible (envtype_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (envtype_combobox = new juce::ComboBox({}));
     envtype_combobox->setEditableText (false);
     envtype_combobox->setJustificationType (Justification::centredLeft);
-    envtype_combobox->setTextWhenNothingSelected (String::empty);
+    envtype_combobox->setTextWhenNothingSelected ({});
     envtype_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     envtype_combobox->addItem (L"RCB", 1);
     envtype_combobox->addItem (L"parabola", 2);
     envtype_combobox->addItem (L"triangle", 3);
     envtype_combobox->addListener (this);
 
-    addAndMakeVisible (dur_quant_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (dur_quant_combobox = new juce::ComboBox({}));
     dur_quant_combobox->setEditableText (false);
     dur_quant_combobox->setJustificationType (Justification::centredLeft);
-    dur_quant_combobox->setTextWhenNothingSelected (String::empty);
+    dur_quant_combobox->setTextWhenNothingSelected ({});
     dur_quant_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     dur_quant_combobox->addItem (L"ms", 1);
     dur_quant_combobox->addItem (L"128", 2);
@@ -933,10 +897,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     dur_quant_combobox->addItem (L"long", 14);
     dur_quant_combobox->addListener (this);
 
-    addAndMakeVisible (iot_quant_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (iot_quant_combobox = new juce::ComboBox({}));
     iot_quant_combobox->setEditableText (false);
     iot_quant_combobox->setJustificationType (Justification::centredLeft);
-    iot_quant_combobox->setTextWhenNothingSelected (String::empty);
+    iot_quant_combobox->setTextWhenNothingSelected({});
     iot_quant_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     iot_quant_combobox->addItem (L"ms", 1);
     iot_quant_combobox->addItem (L"128", 2);
@@ -953,10 +917,10 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     iot_quant_combobox->addItem (L"4T", 13);
     iot_quant_combobox->addListener (this);
 
-    addAndMakeVisible (delay_quant_combobox = new ComboBox (String::empty));
+    addAndMakeVisible (delay_quant_combobox = new juce::ComboBox({}));
     delay_quant_combobox->setEditableText (false);
     delay_quant_combobox->setJustificationType (Justification::centredLeft);
-    delay_quant_combobox->setTextWhenNothingSelected (String::empty);
+    delay_quant_combobox->setTextWhenNothingSelected({});
     delay_quant_combobox->setTextWhenNoChoicesAvailable (L"(no choices)");
     delay_quant_combobox->addItem (L"ms", 1);
     delay_quant_combobox->addItem (L"128", 2);
@@ -973,8 +937,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     delay_quant_combobox->addItem (L"4T", 13);
     delay_quant_combobox->addListener (this);
 
-    addAndMakeVisible (label8 = new Label (String::empty,
-                                           L"+"));
+    addAndMakeVisible (label8 = new juce::Label({}, "+"));
     label8->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label8->setJustificationType (Justification::centred);
     label8->setEditable (false, false, false);
@@ -982,8 +945,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label8->setColour (TextEditor::textColourId, Colours::black);
     label8->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label16 = new Label (String::empty,
-                                            L"+"));
+    addAndMakeVisible (label16 = new juce::Label({}, "+"));
     label16->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label16->setJustificationType (Justification::centred);
     label16->setEditable (false, false, false);
@@ -991,8 +953,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label16->setColour (TextEditor::textColourId, Colours::black);
     label16->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label18 = new Label (String::empty,
-                                            L"+"));
+    addAndMakeVisible (label18 = new juce::Label({}, "+"));
     label18->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label18->setJustificationType (Justification::centred);
     label18->setEditable (false, false, false);
@@ -1000,8 +961,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label18->setColour (TextEditor::textColourId, Colours::black);
     label18->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label12 = new Label (String::empty,
-                                            L"+-"));
+    addAndMakeVisible (label12 = new juce::Label({}, "+-"));
     label12->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label12->setJustificationType (Justification::centred);
     label12->setEditable (false, false, false);
@@ -1009,8 +969,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label12->setColour (TextEditor::textColourId, Colours::black);
     label12->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label14 = new Label (String::empty,
-                                            L"+-"));
+    addAndMakeVisible (label14 = new juce::Label({}, "+-"));
     label14->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label14->setJustificationType (Justification::centred);
     label14->setEditable (false, false, false);
@@ -1018,8 +977,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label14->setColour (TextEditor::textColourId, Colours::black);
     label14->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label20 = new Label (String::empty,
-                                            L"+"));
+    addAndMakeVisible (label20 = new juce::Label({}, "+"));
     label20->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label20->setJustificationType (Justification::centred);
     label20->setEditable (false, false, false);
@@ -1027,8 +985,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label20->setColour (TextEditor::textColourId, Colours::black);
     label20->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label22 = new Label (String::empty,
-                                            L"+"));
+    addAndMakeVisible (label22 = new juce::Label({}, "+"));
     label22->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label22->setJustificationType (Justification::centred);
     label22->setEditable (false, false, false);
@@ -1036,8 +993,7 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label22->setColour (TextEditor::textColourId, Colours::black);
     label22->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (label32 = new Label (String::empty,
-                                            L"Scale"));
+    addAndMakeVisible (label32 = new juce::Label({}, "Scale"));
     label32->setFont (Font (Font::getDefaultSansSerifFontName(), 14.0000f, Font::plain));
     label32->setJustificationType (Justification::centred);
     label32->setEditable (false, false, false);
@@ -1045,12 +1001,12 @@ PluginEditor::PluginEditor (Plugin* const ownerFilter)
     label32->setColour (TextEditor::textColourId, Colours::black);
     label32->setColour (TextEditor::backgroundColourId, Colour (0x0));
 
-    addAndMakeVisible (gliss_toggle_button = new ToggleButton (String::empty));
+    addAndMakeVisible (gliss_toggle_button = new juce::ToggleButton ());
     gliss_toggle_button->addListener (this);
     gliss_toggle_button->setToggleState (true, false);
     gliss_toggle_button->setColour (ToggleButton::textColourId, Colours::white);
 
-    addAndMakeVisible (optionsButton = new TextButton (String::empty));
+    addAndMakeVisible (optionsButton = new juce::TextButton ());
     optionsButton->setButtonText (L"Options");
     optionsButton->setConnectedEdges (Button::ConnectedOnLeft | Button::ConnectedOnRight);
     optionsButton->addListener (this);
@@ -1489,7 +1445,7 @@ void PluginEditor::sliderValueChanged (Slider* sliderThatWasMoved)
 
     //[UsersliderValueChanged_Post]
     if (index >= 0) {
-        getPlugin()->setParameterNotifyingHost(index, value);
+        getPlugin()->setParameter(index, value);
     }
     if (index == kScaleKey) {
         scalekey_display->setText(getPlugin()->getParameterText(index));
@@ -1518,7 +1474,7 @@ void PluginEditor::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
         ffreqv_slider->setEnabled(filterToggleState);
         fq_slider->setEnabled(filterToggleState);
         fqv_slider->setEnabled(filterToggleState);
-        plugin->setParameterNotifyingHost(kFtype, (id - 1) / 6.0f);
+        plugin->setParameter(kFtype, (id - 1) / 6.0f);
         //[/UserComboBoxCode_filtertype_combobox]
     }
     else if (comboBoxThatHasChanged == program_combobox)
@@ -1583,26 +1539,26 @@ void PluginEditor::comboBoxChanged (ComboBox* comboBoxThatHasChanged)
     {
         //[UserComboBoxCode_envtype_combobox] -- add your combo box handling code here..
         float envTypeValue = (id - 1) / 2.0f;
-        plugin->setParameterNotifyingHost(kEnvType, envTypeValue);
+        plugin->setParameter(kEnvType, envTypeValue);
         updateEnvSliders(id);
         //[/UserComboBoxCode_envtype_combobox]
     }
     else if (comboBoxThatHasChanged == dur_quant_combobox)
     {
         //[UserComboBoxCode_dur_quant_combobox] -- add your combo box handling code here..
-        plugin->setParameterNotifyingHost(kDurQuant, id / NumQuantModes::dur);
+        plugin->setParameter(kDurQuant, id / NumQuantModes::dur);
         //[/UserComboBoxCode_dur_quant_combobox]
     }
     else if (comboBoxThatHasChanged == iot_quant_combobox)
     {
         //[UserComboBoxCode_iot_quant_combobox] -- add your combo box handling code here..
-        plugin->setParameterNotifyingHost(kIotQuant, id / NumQuantModes::iot);
+        plugin->setParameter(kIotQuant, id / NumQuantModes::iot);
         //[/UserComboBoxCode_iot_quant_combobox]
     }
     else if (comboBoxThatHasChanged == delay_quant_combobox)
     {
         //[UserComboBoxCode_delay_quant_combobox] -- add your combo box handling code here..
-        plugin->setParameterNotifyingHost(kDelayQuant, id / NumQuantModes::delay);
+        plugin->setParameter(kDelayQuant, id / NumQuantModes::delay);
         //[/UserComboBoxCode_delay_quant_combobox]
     }
 
@@ -1666,7 +1622,7 @@ void PluginEditor::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == freeze_toggle_button)
     {
         //[UserButtonCode_freeze_toggle_button] -- add your button handler code here..
-        plugin->setParameterNotifyingHost (kFreezeToggle, (float)freeze_toggle_button->getToggleState());
+        plugin->setParameter (kFreezeToggle, (float)freeze_toggle_button->getToggleState());
         //[/UserButtonCode_freeze_toggle_button]
     }
     else if (buttonThatWasClicked == matrix_mode_1_button)
@@ -1696,13 +1652,13 @@ void PluginEditor::buttonClicked (Button* buttonThatWasClicked)
     else if (buttonThatWasClicked == trans_toggle_button)
     {
         //[UserButtonCode_trans_toggle_button] -- add your button handler code here..
-        plugin->setParameterNotifyingHost (kTransToggle, (float)trans_toggle_button->getToggleState());
+        plugin->setParameter (kTransToggle, (float)trans_toggle_button->getToggleState());
         //[/UserButtonCode_trans_toggle_button]
     }
     else if (buttonThatWasClicked == gliss_toggle_button)
     {
         //[UserButtonCode_gliss_toggle_button] -- add your button handler code here..
-		plugin->setParameterNotifyingHost (kGlissToggle, (float)gliss_toggle_button->getToggleState());
+		plugin->setParameter (kGlissToggle, (float)gliss_toggle_button->getToggleState());
         //[/UserButtonCode_gliss_toggle_button]
     }
     else if (buttonThatWasClicked == optionsButton)
