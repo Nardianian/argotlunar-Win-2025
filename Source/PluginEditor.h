@@ -43,11 +43,12 @@ enum ComponentType {
   Argotlunar 2.0 GUI
                                                                     //[/Comments]
 */
-class PluginEditor  : public AudioProcessorEditor,
-                      public Timer,
-                      public SliderListener,
-                      public ComboBoxListener,
-                      public ButtonListener
+class PluginEditor : public juce::AudioProcessorEditor,
+    public juce::Timer,
+    public juce::Slider::Listener,
+    public juce::ComboBox::Listener,
+    public juce::Button::Listener
+
 {
 public:
     //==============================================================================
@@ -73,7 +74,7 @@ public:
 
     void paint (Graphics& g);
     void resized();
-    void sliderValueChanged (Slider* sliderThatWasMoved);
+    void sliderValueChanged(juce::Slider* slider) override;
     void comboBoxChanged (ComboBox* comboBoxThatHasChanged);
     void buttonClicked (Button* buttonThatWasClicked);
 
