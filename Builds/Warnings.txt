@@ -1,29 +1,26 @@
-Latest build in Visual Studio in Release mode produces 0 Errors and 88 Warnings
-
+Warnings List
+Latest build in Visual Studio in Release mode produces 0 Errors and these 88 Warnings:
 Warning C4244 '=': Conversion from 'double' to 'float'. Possible data loss.	Argotlunar_SharedCode C:\Users\capoc\Repos\argotlunar\Source\Filter.cpp 25		
-Warning C4458 if you declare 'type', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Filter.cpp 10 and 21		
-Warning C4458 if you declare 'samplerate', class member will be hidden Argotlunar_SharedCode ...\Granulator.cpp 23, Parameters.cpp 592 and in TimeQuantizer.cpp 227	
-Warning C4458 if you declare 'sampleframes', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Granulator.cpp 73, 92, 99, 109 and 125		
-Warning C4458 if you declare 'playHead', the class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 406		
-Warning C4458 if you declare 'param', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Parameters.cpp 545, 555 and 565		
-Warning C4458 if you declare 'outbuf_right', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Granulator.cpp 91 and 99
-Warning C4458 if you declare 'outbuf_left', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Granulator.cpp 91 and 98
-Warning C4458 if you declare 'grain_amp', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Envelope.cpp 9
-Warning C4458 if you declare 'frac', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Grain.cpp 167
-Warning C4458 if you declare 'env_type', the class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\Envelope.cpp 8
+Warning C4458 if you declare 'type', class member will be hidden          Argotlunar_SharedCode ...\argotlunar\Source\Filter.cpp 10 and 21		
+Warning C4458 if you declare 'samplerate', class member will be hidden    Argotlunar_SharedCode ...\Granulator.cpp 23, Parameters.cpp 592 and in TimeQuantizer.cpp 227	
+Warning C4458 if you declare 'sampleframes', class member will be hidden  Argotlunar_SharedCode ...\argotlunar\Source\Granulator.cpp 73, 92, 99, 109 and 125		
+Warning C4458 if you declare 'playHead', the class member will be hidden  Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 406		
+Warning C4458 if you declare 'param', class member will be hidden         Argotlunar_SharedCode ...\argotlunar\Source\Parameters.cpp 545, 555 and 565		
+Warning C4458 if you declare 'outbuf_right', class member will be hidden  Argotlunar_SharedCode ...\argotlunar\Source\Granulator.cpp 91 and 99
+Warning C4458 if you declare 'outbuf_left', class member will be hidden   Argotlunar_SharedCode ...\argotlunar\Source\Granulator.cpp 91 and 98
+Warning C4458 if you declare 'grain_amp', class member will be hidden     Argotlunar_SharedCode ...\argotlunar\Source\Envelope.cpp 9
+Warning C4458 if you declare 'frac', class member will be hidden          Argotlunar_SharedCode ...\argotlunar\Source\Grain.cpp 167
+Warning C4458 if you declare 'env_type', the class member will be hidden  Argotlunar_SharedCode ...\argotlunar\Source\Envelope.cpp 8
 Warning C4458 if you declare 'currentProgram', class member will be hidden Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 1931
-Warning C4100 'samples_per_block': unreferenced parameter Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 94
-Warning C4100 'index': unreferenced parameter Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 49, 54
-Warning C4100 'midiMessages': Unreferenced parameter Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 104
-Warning C4996 'juce::XmlElement::macroBasedForLoop': Argotlunar_SharedCode has been deprecated ...\argotlunar\Source\ProgramBank.cpp 62
+Warning C4100 'samples_per_block': unreferenced parameter                  Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 94
+Warning C4100 'index': unreferenced parameter                              Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 49, 54
+Warning C4100 'midiMessages': Unreferenced parameter                       Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 104
+Warning C4996 'juce::XmlElement::macroBasedForLoop': Argotlunar_SharedCode has been deprecated   ...\argotlunar\Source\ProgramBank.cpp 62
 Warning C4996 'juce::XmlElement::createDocument': This has been deprecated in favor of the toString method.  Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 377 and 402
-Warning C4996 'juce::Font::Font': Use the constructor that takes a FontOptions argument Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 176, 193, 210, 227, 244, 261, 278,
-   304, 321. 347, 373, 399, 425, 452, 480, 550, 577 and 585
-Warning C4996 'juce::Font::Font': Use the constructor that takes a FontOptions argument Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 593, 623, 635, 692, 700, 757, 765, 
- 822, 830, 941, 949, 957, 965, 973, 981, 989, 997
+Warning C4996 'juce::Font::Font': Use the constructor that takes a FontOptions argument Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 176, 193, 210, 227, 244, 261, 278, 304, 321. 347, 373, 399, 425, 452, 480, 550, 577 and 585
+Warning C4996 'juce::Font::Font': Use the constructor that takes a FontOptions argument Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 593, 623, 635, 692, 700, 757, 765, 822, 830, 941, 949, 957, 965, 973, 981, 989, 997
 Warning C4996 'juce::ComboBox::setSelectedId': Argotlunar_SharedCode has been deprecated ...\argotlunar\Source\PluginEditor.cpp 1823
-Warning C4996 'juce::Button::setToggleState': This method's parameters have changed.  Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 839, 844, 849, 866, 1006, 1853, 1855, 
- 1857, 1861, 1866, 1871
+Warning C4996 'juce::Button::setToggleState': This method's parameters have changed.  Argotlunar_SharedCode ...\argotlunar\Source\PluginEditor.cpp 839, 844, 849, 866, 1006, 1853, 1855, 1857, 1861, 1866, 1871
 Warning C4996 'juce::AudioProcessor::getNumInputChannels': Argotlunar_SharedCode has been deprecated ...\argotlunar\Source\Plugin.cpp 106
 Warning C4996 'juce::AudioPlayHead::getCurrentPosition': Use getPosition instead. Not all hosts are able to provide all time position information; getPosition differentiates clearly  
  between set and unset fields.  Argotlunar_SharedCode ...\argotlunar\Source\Plugin.cpp 114
