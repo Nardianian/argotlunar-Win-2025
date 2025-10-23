@@ -106,8 +106,8 @@ void Plugin::processBlock(AudioSampleBuffer& buffer, MidiBuffer& midiMessages)
     if (getNumInputChannels() != 2 && getNumOutputChannels() != 2) {
         return;
     }
-    float* chan1 = buffer.getSampleData(0);
-    float* chan2 = buffer.getSampleData(1);
+    float* chan1 = buffer.getWritePointer(0);
+    float* chan2 = buffer.getWritePointer(1);
     int sampleframes = buffer.getNumSamples();
     int blocks = sampleframes / kInternalBlocksize;
 
@@ -324,11 +324,10 @@ void Plugin::getCurrentProgramStateInformation(MemoryBlock& destData)
 void Plugin::setCurrentProgramStateInformation(const void* data, int sizeInBytes)
 {
     //load program from host
-    XmlElement* const xml_state = getXmlFromBinary(data, sizeInBytes);
-    if (xml_state != 0) {
-        program_bank->loadProgramFromXml(current_program, xml_state);
+    std::unique_ptr<juce::XmlElement> xml_state = juce::AudioProcessor::getXmlFromBinary(data, sizeInBytes);
+    if (xml_state != nullptr) {
+        program_bank->loadProgramFromXml(current_program, xml_state.get());
         setCurrentProgram(current_program);
-        delete xml_state;
         editor_program_update_pending = true;
     }
 }
@@ -347,11 +346,11 @@ void Plugin::getStateInformation (MemoryBlock& destData)
 void Plugin::setStateInformation (const void* data, int sizeInBytes)
 {
     //load bank from host
-    XmlElement* const xml_state = getXmlFromBinary(data, sizeInBytes);
+    std::unique_ptr<juce::XmlElement> xml_state = juce::AudioProcessor::getXmlFromBinary(data, sizeInBytes);
     if (xml_state != 0) {
-        program_bank->loadBankFromXml(xml_state);
+        program_bank->loadBankFromXml(xml_state.get());
         setCurrentProgram(current_program);
-        delete xml_state;
+
         editor_program_update_pending = true;
     }
 }
@@ -359,12 +358,11 @@ void Plugin::setStateInformation (const void* data, int sizeInBytes)
 void Plugin::loadBankXml(File* file)
 {
     //load bank from file
-    XmlDocument xml_document(*file);
-    XmlElement* xml_state = xml_document.getDocumentElement();
+    juce::XmlDocument xml_document(*file);
+    std::unique_ptr<juce::XmlElement> xml_state = xml_document.getDocumentElement();
     if (xml_state != 0) {
-        program_bank->loadBankFromXml(xml_state);
+        program_bank->loadBankFromXml(xml_state.get());
         setCurrentProgram(current_program);
-        delete xml_state;
         editor_program_update_pending = true;
     }
 }
@@ -376,7 +374,7 @@ void Plugin::saveBankXml(File* file)
 
     // output bank to file
     XmlElement* bankXml = program_bank->createBankXml();
-    file->replaceWithText(bankXml->createDocument(String::empty));
+    file->replaceWithText(bankXml->createDocument({}));
     delete bankXml;
     editor_program_update_pending = true;
     setSavedState(true);
@@ -385,12 +383,11 @@ void Plugin::saveBankXml(File* file)
 void Plugin::loadCurrentProgramXml(File* file)
 {
     //load program from file
-    XmlDocument xml_document(*file);
-    XmlElement* xml_state = xml_document.getDocumentElement();
+    juce::XmlDocument xml_document(*file);
+    std::unique_ptr<juce::XmlElement> xml_state = xml_document.getDocumentElement();
     if (xml_state != 0) {
-        program_bank->loadProgramFromXml(current_program, xml_state);
+        program_bank->loadProgramFromXml(current_program, xml_state.get());
         setCurrentProgram(current_program);
-        delete xml_state;
         editor_program_update_pending = true;
     }
 }
@@ -402,6 +399,17 @@ void Plugin::saveCurrentProgramXml(File* file)
 
     //output program to file
     XmlElement* program = program_bank->createProgramXml(current_program);
-    file->replaceWithText(program->createDocument(String::empty));
+    file->replaceWithText(program->createDocument({}));
     delete program;
 }
+
+void Plugin::setPlayHead(juce::AudioPlayHead* playHead)
+{
+    // Buona pratica: chiama la versione base
+    juce::AudioProcessor::setPlayHead(playHead);
+
+    // Se vuoi salvare il playhead per uso futuro, puoi farlo cos :
+    // this->playHead = playHead;
+}
+
+
