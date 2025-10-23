@@ -1,1 +1,3 @@
-The build of this fork was conducted on Windows 11 Home edition with Juce version 8.0.10 and Visual Studio Community Edition 2022 version 17.14.17 but i think it can also work on other systems (the original repo included builds for Android, iOS, Mac, Linux and Windows with Visual Studio until 2010)
+The build of this fork was conducted on Windows 11 Home edition with Juce version 8.0.10 and Visual Studio Community Edition 2022 version 17.14.17 
+but i think it can also work on other systems (the original repo included builds for Android, iOS, Mac, Linux and Windows with Visual Studio until 2010),
+you need to add your IDE from Juce GUI or from the .jucer textual code.
